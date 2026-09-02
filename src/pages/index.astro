@@ -1,7 +1,7 @@
 ---
 import SiteLayout from "@/layouts/SiteLayout.astro";
 import { SITE } from "@/config";
-import { ledger, products } from "@/data/research";
+import { foundations, products } from "@/data/research";
 
 const year = new Date().getFullYear();
 ---
@@ -23,15 +23,15 @@ const year = new Date().getFullYear();
           class="wordmark-logo"
           src="/logo.webp"
           alt=""
-          width="38"
-          height="38"
+          width="96"
+          height="49"
         />
         <span>Najd Research</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#code">Code <span>01</span></a>
-        <a href="#research">Research <span>02</span></a>
-        <a href="#about">About <span>03</span></a>
+        <a href="#code">Work <span>01</span></a>
+        <a href="#about">Principles <span>02</span></a>
+        <a href="#research">Research <span>03</span></a>
         <a href={SITE.github} target="_blank" rel="noreferrer">GitHub ↗</a>
       </nav>
     </div>
@@ -52,53 +52,42 @@ const year = new Date().getFullYear();
           tools, delegate work, and finish software.
         </p>
         <div class="hero-actions">
-          <a class="primary-action" href="#code">See what we are building</a>
-          <a class="text-action" href="#research">Read the index ↓</a>
+          <a class="primary-action" href="#code">Explore Najd Code</a>
+          <a class="text-action" href="#research">Research index ↓</a>
         </div>
-        <dl class="hero-meta-grid">
-          <div>
-            <dt>Status</dt>
-            <dd><i aria-hidden="true"></i> Active development</dd>
-          </div>
-          <div>
-            <dt>Focus</dt>
-            <dd>Agent systems</dd>
-          </div>
-          <div>
-            <dt>Base</dt>
-            <dd>Riyadh, SA</dd>
-          </div>
-        </dl>
       </div>
 
-      <figure class="portrait-figure">
-        <div class="portrait-frame">
+      <figure class="landscape-figure">
+        <div class="landscape-frame">
           <img
-            src="/portrait.webp"
-            alt="Engraved profile portrait representing Najd"
-            width="840"
-            height="1229"
+            src="/tuwaiq.webp"
+            alt="The limestone cliffs of Jabal Tuwaiq in Najd"
+            width="1600"
+            height="963"
             loading="eager"
             fetchpriority="high"
           />
         </div>
         <figcaption>
-          <span>FIG. 001</span>
+          <span>FIG. 001 / JABAL TUWAIQ / 24.38° N · 46.17° E</span>
           <span>NAJD / RIYADH</span>
         </figcaption>
       </figure>
-    </section>
 
-    <section class="statement-band" aria-label="Research position">
-      <div class="page-shell statement-inner">
-        <p>Najd Code <b>01</b></p>
-        <span aria-hidden="true">→</span>
-        <p>Najd Chat <b>02</b></p>
-        <span aria-hidden="true">→</span>
-        <p>Najd Search <b>03</b></p>
-        <span aria-hidden="true">→</span>
-        <p>Najd Models <b>04</b></p>
-      </div>
+      <dl class="hero-meta-grid">
+        <div>
+          <dt>Status</dt>
+          <dd><i aria-hidden="true"></i> Active development</dd>
+        </div>
+        <div>
+          <dt>Focus</dt>
+          <dd>Agent systems</dd>
+        </div>
+        <div>
+          <dt>Base</dt>
+          <dd>Riyadh, SA</dd>
+        </div>
+      </dl>
     </section>
 
     <section
@@ -110,20 +99,28 @@ const year = new Date().getFullYear();
         <div>
           <p class="section-number">02 / CURRENT WORK</p>
           <h2 id="work-title">
-            One active edge.<br />A larger system behind it.
+            One active edge.<br />A connected system next.
           </h2>
         </div>
         <p>
-          We are building the shared foundation through Najd Code first. Other
-          products remain named commitments, not claims of availability.
+          Najd Code is the active proving ground. Chat, Search, Craft, and Docs
+          remain frozen while Models is a future research line. Names describe
+          the system we are building, not products available today.
         </p>
       </div>
 
-      <ol class="product-list">
+      <ol class="product-list" aria-label="Najd product roadmap">
         {
-          products.map(product => (
+          products.map((product, index) => (
             <li class:list={["product-record", `is-${product.status}`]}>
-              <span class="record-number">{product.number}</span>
+              <div class="record-topline">
+                <span class="record-number">{product.number}</span>
+                {index < products.length - 1 && (
+                  <span class="record-arrow" aria-hidden="true">
+                    →
+                  </span>
+                )}
+              </div>
               <div class="record-body">
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
@@ -135,6 +132,27 @@ const year = new Date().getFullYear();
           ))
         }
       </ol>
+
+      <div class="foundation-block" aria-labelledby="foundation-title">
+        <div>
+          <p class="section-number">SHARED FOUNDATIONS</p>
+          <h3 id="foundation-title">One stack beneath the products.</h3>
+        </div>
+        <ol class="foundation-list">
+          {
+            foundations.map((foundation, index) => (
+              <li>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h4>{foundation.name}</h4>
+                  <p>{foundation.description}</p>
+                </div>
+                <code>{foundation.repository}</code>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
     </section>
 
     <section
@@ -157,8 +175,7 @@ const year = new Date().getFullYear();
             <div>
               <h3>Open by default</h3>
               <p>
-                Publish the code, methods, and evidence that make scrutiny
-                possible.
+                Publish code, methods, and evidence that make scrutiny possible.
               </p>
             </div>
           </li>
@@ -192,35 +209,35 @@ const year = new Date().getFullYear();
     >
       <div class="ledger-heading">
         <div>
-          <p class="section-number">04 / RESEARCH LEDGER</p>
-          <h2 id="ledger-title">A record of the work.</h2>
+          <p class="section-number">04 / RESEARCH INDEX</p>
+          <h2 id="ledger-title">Evidence, when it is ready.</h2>
         </div>
-        <p>Releases, notes, models, and experiments will accumulate here.</p>
+        <p>
+          Releases, notes, models, and experiments will appear here when there
+          is something concrete to inspect.
+        </p>
       </div>
-      <ol class="ledger-list">
-        {
-          ledger.map(record => (
-            <li>
-              <span class="ledger-number">{record.number}</span>
-              <time>{record.date}</time>
-              <div class="ledger-copy">
-                <h3>{record.title}</h3>
-                <p>{record.description}</p>
-              </div>
-              <span class="status" data-status={record.status}>
-                {record.label}
-              </span>
-            </li>
-          ))
-        }
-      </ol>
+      <div class="empty-ledger">
+        <div>
+          <span class="empty-ledger-number">000</span>
+          <p>Index status</p>
+        </div>
+        <div>
+          <h3>No public releases yet.</h3>
+          <p>
+            Najd Code is in active development. We will publish the record with
+            the work.
+          </p>
+        </div>
+        <span class="status" data-status="foundation">Forthcoming</span>
+      </div>
     </section>
   </main>
 
   <footer>
     <div class="page-shell footer-grid">
-      <img class="footer-logo" src="/logo.webp" alt="" width="70" height="70" />
-      <div>
+      <img class="footer-logo" src="/logo.webp" alt="" width="96" height="49" />
+      <div class="footer-identity">
         <p class="footer-name">Najd Research</p>
         <p>Independent AI research from Riyadh.</p>
       </div>
@@ -228,6 +245,14 @@ const year = new Date().getFullYear();
         <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
         <a href={SITE.github} target="_blank" rel="noreferrer">GitHub ↗</a>
       </div>
+      <p class="image-credit">
+        Jabal Tuwaiq photograph: Baptiste Marcel,
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Tuwaik_escarpment-15h23m15s-s.jpg"
+          target="_blank"
+          rel="noreferrer">public domain</a
+        >. Cropped and rendered in monochrome.
+      </p>
       <p class="copyright">© {year} Najd Research</p>
     </div>
   </footer>

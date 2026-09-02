@@ -1,4 +1,4 @@
-export type WorkStatus = "active" | "foundation" | "next";
+export type WorkStatus = "active" | "frozen" | "future";
 
 export interface ProductRecord {
   number: string;
@@ -8,13 +8,10 @@ export interface ProductRecord {
   label: string;
 }
 
-export interface LedgerRecord {
-  number: string;
-  date: string;
-  title: string;
+export interface FoundationRecord {
+  name: string;
   description: string;
-  status: WorkStatus;
-  label: string;
+  repository: string;
 }
 
 export const products: ProductRecord[] = [
@@ -29,55 +26,61 @@ export const products: ProductRecord[] = [
   {
     number: "02",
     name: "Najd Chat",
-    description:
-      "A general conversational interface built on the shared Najd foundation.",
-    status: "next",
-    label: "Next",
+    description: "A conversational interface built on a shared knowledge core.",
+    status: "frozen",
+    label: "Frozen",
   },
   {
     number: "03",
     name: "Najd Search",
     description:
-      "A research and retrieval interface for working across open knowledge.",
-    status: "next",
-    label: "Next",
+      "Retrieval and research across connected, inspectable knowledge.",
+    status: "frozen",
+    label: "Frozen",
   },
   {
     number: "04",
+    name: "Najd Craft",
+    description:
+      "An agentic builder for applications, documents, and working artifacts.",
+    status: "frozen",
+    label: "Frozen",
+  },
+  {
+    number: "05",
+    name: "Najd Docs",
+    description:
+      "Versioned knowledge with retrieval, evidence, and claim-level citations.",
+    status: "frozen",
+    label: "Frozen contract",
+  },
+  {
+    number: "06",
     name: "Najd Models",
     description:
-      "Models trained, adapted, or released by Najd Research when the work earns that name.",
-    status: "next",
-    label: "Next",
+      "Models trained, adapted, or released when the work earns that name.",
+    status: "future",
+    label: "Future",
   },
 ];
 
-export const ledger: LedgerRecord[] = [
+export const foundations: FoundationRecord[] = [
   {
-    number: "001",
-    date: "2026—09",
-    title: "Najd Code",
+    name: "Najd CLI",
     description:
-      "The active edge of the lab: building an agent environment around planning, tools, delegation, and completion.",
-    status: "active",
-    label: "Active development",
+      "The najd command-line interface for local and remote workflows.",
+    repository: "cli",
   },
   {
-    number: "002",
-    date: "2026—09",
-    title: "Shared agent runtime",
+    name: "Najd Agent",
     description:
-      "Foundation work for a coherent family of systems, developed through the needs of Najd Code first.",
-    status: "foundation",
-    label: "Foundation work",
+      "The pinned coding and research runtime behind agent sessions.",
+    repository: "najd-agent",
   },
   {
-    number: "003",
-    date: "2026—09—03",
-    title: "Public research index",
+    name: "Najd Platform",
     description:
-      "A home for future releases, notes, models, experiments, and the evidence behind them.",
-    status: "foundation",
-    label: "Index opened",
+      "The free-only routing, orchestration, packaging, and acceptance layer.",
+    repository: "platform",
   },
 ];
