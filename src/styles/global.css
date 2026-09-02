@@ -176,6 +176,9 @@ figure {
 .wordmark-logo {
   width: 2.35rem;
   height: 2.35rem;
+  object-fit: cover;
+  border: 1px solid rgba(247, 247, 242, 0.35);
+  filter: grayscale(1) contrast(1.08);
 }
 
 nav {
@@ -720,6 +723,9 @@ footer {
 .footer-logo {
   width: 4.4rem;
   height: 4.4rem;
+  object-fit: cover;
+  border: 1px solid rgba(247, 247, 242, 0.35);
+  filter: grayscale(1) contrast(1.08);
 }
 
 .footer-name {
