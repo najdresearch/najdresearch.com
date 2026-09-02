@@ -1,0 +1,64 @@
+---
+import { SITE } from "@/config";
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: URL;
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  canonicalURL = new URL(Astro.url.pathname, SITE.website),
+} = Astro.props;
+const socialImageURL = new URL("/og.png", SITE.website);
+const organizationData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.title,
+  url: SITE.website,
+  email: SITE.email,
+  description: SITE.description,
+  location: {
+    "@type": "Place",
+    name: "Riyadh, Saudi Arabia",
+  },
+  sameAs: [SITE.github],
+};
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f1ebdd" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.title} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(organizationData)}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
