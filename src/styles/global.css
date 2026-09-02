@@ -173,16 +173,9 @@ figure {
   text-decoration: none;
 }
 
-.wordmark-seal {
-  display: grid;
+.wordmark-logo {
   width: 2.35rem;
   height: 2.35rem;
-  place-items: center;
-  color: var(--paper);
-  background: var(--red);
-  font-family: "Newsreader Variable", Georgia, serif;
-  font-size: 0.9rem;
-  line-height: 1;
 }
 
 nav {
@@ -232,12 +225,13 @@ nav a:hover::after {
 
 .hero {
   position: relative;
+  isolation: isolate;
   display: grid;
-  min-height: min(52rem, calc(100svh - 8.55rem));
+  min-height: min(48rem, calc(100svh - 8.55rem));
   grid-template-columns: minmax(0, 1.18fr) minmax(24rem, 0.82fr);
   align-items: center;
   gap: clamp(3rem, 7vw, 7rem);
-  padding-block: clamp(5rem, 9vw, 8.5rem);
+  padding-block: clamp(4rem, 6vw, 6.5rem);
   color: var(--paper);
 }
 
@@ -293,7 +287,7 @@ nav a:hover::after {
   max-width: 47rem;
   margin-top: 2.2rem;
   font-family: "Newsreader Variable", Newsreader, Georgia, serif;
-  font-size: clamp(3.6rem, 7vw, 7rem);
+  font-size: clamp(3.6rem, 5.8vw, 6.3rem);
   font-weight: 430;
   letter-spacing: -0.055em;
   line-height: 0.91;
@@ -305,8 +299,8 @@ nav a:hover::after {
 }
 
 .hero-intro {
-  max-width: 40rem;
-  margin-top: 2.3rem;
+  max-width: 36rem;
+  margin-top: 1.9rem;
   color: rgba(247, 247, 242, 0.63);
   font-family: "Newsreader Variable", Newsreader, Georgia, serif;
   font-size: clamp(1.15rem, 1.8vw, 1.35rem);
@@ -318,7 +312,7 @@ nav a:hover::after {
   flex-wrap: wrap;
   align-items: center;
   gap: 1.5rem;
-  margin-top: 2.6rem;
+  margin-top: 2rem;
 }
 
 .primary-action,
@@ -359,7 +353,7 @@ nav a:hover::after {
 
 .portrait-figure {
   position: relative;
-  width: min(100%, 31rem);
+  width: min(100%, 28rem);
   justify-self: end;
 }
 
@@ -378,8 +372,8 @@ nav a:hover::after {
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border: 1px solid rgba(247, 247, 242, 0.22);
-  background: #080a08;
-  filter: contrast(1.12);
+  background: var(--paper);
+  filter: contrast(1.04);
 }
 
 .portrait-frame img {
@@ -387,9 +381,8 @@ nav a:hover::after {
   height: 100%;
   object-fit: cover;
   object-position: center 42%;
-  filter: grayscale(1) invert(1) brightness(0.72) contrast(1.2);
-  mix-blend-mode: screen;
-  opacity: 0.9;
+  filter: grayscale(1) contrast(1.08);
+  opacity: 1;
   transform: scale(1.06);
 }
 
@@ -409,7 +402,7 @@ nav a:hover::after {
   display: grid;
   max-width: 43rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 3.5rem 0 0;
+  margin: 2.5rem 0 0;
   border-top: 1px solid rgba(247, 247, 242, 0.17);
   border-bottom: 1px solid rgba(247, 247, 242, 0.17);
 }
@@ -620,9 +613,13 @@ nav a:hover::after {
   background: transparent;
 }
 
-.is-future,
-.is-frozen {
+.status[data-status="next"] {
   color: var(--ink-soft);
+}
+
+.status[data-status="next"]::before {
+  border: 1px solid var(--red);
+  background: transparent;
 }
 
 .principles-section {
@@ -720,15 +717,9 @@ footer {
   padding-block: 4.5rem 2.5rem;
 }
 
-.footer-mark {
-  display: grid;
+.footer-logo {
   width: 4.4rem;
   height: 4.4rem;
-  place-items: center;
-  color: var(--paper);
-  border: 1px solid rgba(241, 235, 221, 0.42);
-  font-family: "Newsreader Variable", Georgia, serif;
-  font-size: 1.4rem;
 }
 
 .footer-name {
