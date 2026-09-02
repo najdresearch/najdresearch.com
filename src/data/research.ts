@@ -28,14 +28,6 @@ export const products: ProductRecord[] = [
   },
   {
     number: "02",
-    name: "Najd Models",
-    description:
-      "Models trained, adapted, or released by Najd Research when the work earns that name.",
-    status: "future",
-    label: "Future",
-  },
-  {
-    number: "03",
     name: "Najd Chat",
     description:
       "A general conversational interface held outside the current development focus.",
@@ -43,12 +35,20 @@ export const products: ProductRecord[] = [
     label: "Frozen",
   },
   {
-    number: "04",
+    number: "03",
     name: "Najd Search",
     description:
       "A research and retrieval interface held outside the current development focus.",
     status: "frozen",
     label: "Frozen",
+  },
+  {
+    number: "04",
+    name: "Najd Models",
+    description:
+      "Models trained, adapted, or released by Najd Research when the work earns that name.",
+    status: "future",
+    label: "Future",
   },
 ];
 
