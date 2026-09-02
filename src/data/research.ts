@@ -1,4 +1,4 @@
-export type WorkStatus = "active" | "frozen" | "future";
+export type WorkStatus = "active" | "next";
 
 export interface ProductRecord {
   number: string;
@@ -27,40 +27,40 @@ export const products: ProductRecord[] = [
     number: "02",
     name: "Najd Chat",
     description: "A conversational interface built on a shared knowledge core.",
-    status: "frozen",
-    label: "Frozen",
+    status: "next",
+    label: "Next",
   },
   {
     number: "03",
-    name: "Najd Search",
-    description:
-      "Retrieval and research across connected, inspectable knowledge.",
-    status: "frozen",
-    label: "Frozen",
-  },
-  {
-    number: "04",
     name: "Najd Craft",
     description:
       "An agentic builder for applications, documents, and working artifacts.",
-    status: "frozen",
-    label: "Frozen",
+    status: "next",
+    label: "Next",
+  },
+  {
+    number: "04",
+    name: "Najd Search",
+    description:
+      "Retrieval and research across connected, inspectable knowledge.",
+    status: "next",
+    label: "Next",
   },
   {
     number: "05",
-    name: "Najd Docs",
-    description:
-      "Versioned knowledge with retrieval, evidence, and claim-level citations.",
-    status: "frozen",
-    label: "Frozen contract",
-  },
-  {
-    number: "06",
     name: "Najd Models",
     description:
       "Models trained, adapted, or released when the work earns that name.",
-    status: "future",
-    label: "Future",
+    status: "next",
+    label: "Next",
+  },
+  {
+    number: "06",
+    name: "Najd Inference",
+    description:
+      "Open infrastructure for serving, evaluating, and operating models.",
+    status: "next",
+    label: "Next",
   },
 ];
 
