@@ -3,7 +3,7 @@ export const SITE = {
   description:
     "Independent AI research from Riyadh, building open and inspectable systems for machine intelligence.",
   website: "https://najdresearch.com",
-  email: "salam@najdresearch.com",
+  email: "sala@najdresearch.com",
   github: "https://github.com/najdresearch",
   locale: "en_US",
 } as const;
