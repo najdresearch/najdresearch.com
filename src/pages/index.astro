@@ -1,20 +1,13 @@
 ---
 import SiteLayout from "@/layouts/SiteLayout.astro";
 import { SITE } from "@/config";
-import { foundations, products } from "@/data/research";
+import { products } from "@/data/research";
 
 const year = new Date().getFullYear();
 ---
 
 <SiteLayout>
   <a class="skip-link" href="#main-content">Skip to content</a>
-
-  <div class="announcement" role="status">
-    <div class="page-shell announcement-inner">
-      <span><i aria-hidden="true"></i> Najd Code / Active development</span>
-      <span>Open systems for machine intelligence</span>
-    </div>
-  </div>
 
   <header class="site-header">
     <div class="page-shell header-inner">
@@ -29,8 +22,8 @@ const year = new Date().getFullYear();
         <span>Najd Research</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#code">Work <span>01</span></a>
-        <a href="#about">Principles <span>02</span></a>
+        <a href="#work">Work <span>01</span></a>
+        <a href="#principles">Principles <span>02</span></a>
         <a href="#research">Research <span>03</span></a>
         <a href={SITE.github} target="_blank" rel="noreferrer">GitHub ↗</a>
       </nav>
@@ -40,9 +33,7 @@ const year = new Date().getFullYear();
   <main id="main-content">
     <section class="hero page-shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="kicker">
-          <span>01</span> Independent AI research from Riyadh
-        </p>
+        <p class="kicker">Independent AI research from Riyadh</p>
         <h1 id="hero-title">
           Intelligence should be <em>open,</em> inspectable, and useful.
         </h1>
@@ -52,7 +43,7 @@ const year = new Date().getFullYear();
           tools, delegate work, and finish software.
         </p>
         <div class="hero-actions">
-          <a class="primary-action" href="#code">Explore Najd Code</a>
+          <a class="primary-action" href="#work">Explore Najd Code</a>
           <a class="text-action" href="#research">Research index ↓</a>
         </div>
       </div>
@@ -92,12 +83,12 @@ const year = new Date().getFullYear();
 
     <section
       class="work-section page-shell"
-      id="code"
+      id="work"
       aria-labelledby="work-title"
     >
       <div class="section-heading">
         <div>
-          <p class="section-number">02 / CURRENT WORK</p>
+          <p class="section-number">01 / CURRENT WORK</p>
           <h2 id="work-title">
             One active edge.<br />A connected system next.
           </h2>
@@ -132,37 +123,16 @@ const year = new Date().getFullYear();
           ))
         }
       </ol>
-
-      <div class="foundation-block" aria-labelledby="foundation-title">
-        <div>
-          <p class="section-number">SHARED FOUNDATIONS</p>
-          <h3 id="foundation-title">One stack beneath the products.</h3>
-        </div>
-        <ol class="foundation-list">
-          {
-            foundations.map((foundation, index) => (
-              <li>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h4>{foundation.name}</h4>
-                  <p>{foundation.description}</p>
-                </div>
-                <code>{foundation.repository}</code>
-              </li>
-            ))
-          }
-        </ol>
-      </div>
     </section>
 
     <section
       class="principles-section"
-      id="about"
+      id="principles"
       aria-labelledby="principles-title"
     >
       <div class="page-shell principles-grid">
         <div class="principles-intro">
-          <p class="section-number">03 / PRINCIPLES</p>
+          <p class="section-number">02 / PRINCIPLES</p>
           <h2 id="principles-title">The work should explain the lab.</h2>
           <p>
             Najd Research exists to make machine intelligence more open,
@@ -209,7 +179,7 @@ const year = new Date().getFullYear();
     >
       <div class="ledger-heading">
         <div>
-          <p class="section-number">04 / RESEARCH INDEX</p>
+          <p class="section-number">03 / RESEARCH INDEX</p>
           <h2 id="ledger-title">Evidence, when it is ready.</h2>
         </div>
         <p>
@@ -244,6 +214,10 @@ const year = new Date().getFullYear();
       <div class="footer-links">
         <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
         <a href={SITE.github} target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href={SITE.x} target="_blank" rel="noreferrer">X ↗</a>
+        <a href={SITE.huggingFace} target="_blank" rel="noreferrer"
+          >Hugging Face ↗</a
+        >
       </div>
       <p class="image-credit">
         Jabal Tuwaiq photograph: saudipics,

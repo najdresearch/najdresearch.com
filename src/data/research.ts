@@ -8,12 +8,6 @@ export interface ProductRecord {
   label: string;
 }
 
-export interface FoundationRecord {
-  name: string;
-  description: string;
-  repository: string;
-}
-
 export const products: ProductRecord[] = [
   {
     number: "01",
@@ -61,26 +55,5 @@ export const products: ProductRecord[] = [
       "Open infrastructure for serving, evaluating, and operating models.",
     status: "next",
     label: "Next",
-  },
-];
-
-export const foundations: FoundationRecord[] = [
-  {
-    name: "Najd CLI",
-    description:
-      "The najd command-line interface for local and remote workflows.",
-    repository: "cli",
-  },
-  {
-    name: "Najd Agent",
-    description:
-      "The pinned coding and research runtime behind agent sessions.",
-    repository: "najd-agent",
-  },
-  {
-    name: "Najd Platform",
-    description:
-      "The free-only routing, orchestration, packaging, and acceptance layer.",
-    repository: "platform",
   },
 ];

@@ -5,5 +5,7 @@ export const SITE = {
   website: "https://najdresearch.com",
   email: "salam@najdresearch.com",
   github: "https://github.com/najdresearch",
+  x: "https://x.com/najdresearch",
+  huggingFace: "https://huggingface.co/najdresearch",
   locale: "en_US",
 } as const;

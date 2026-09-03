@@ -112,7 +112,6 @@ figure {
   transform: translateY(0);
 }
 
-.announcement,
 .site-header,
 .hero,
 footer {
@@ -120,25 +119,6 @@ footer {
   background: var(--ink);
 }
 
-.announcement {
-  border-bottom: 1px solid rgba(247, 247, 242, 0.12);
-}
-
-.announcement-inner {
-  display: flex;
-  min-height: 2.5rem;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: rgba(247, 247, 242, 0.7);
-  font:
-    500 0.68rem/1 "JetBrains Mono Variable",
-    monospace;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.announcement i,
 .hero-meta-grid i {
   display: inline-block;
   width: 0.45rem;
@@ -282,16 +262,6 @@ nav a:focus-visible::after {
   display: flex;
   align-items: center;
   gap: 0.9rem;
-}
-
-.kicker span {
-  display: grid;
-  width: 2.2rem;
-  height: 2.2rem;
-  flex: 0 0 auto;
-  place-items: center;
-  border: 1px solid var(--green-soft);
-  border-radius: 50%;
 }
 
 .hero h1 {
@@ -576,62 +546,6 @@ nav a:focus-visible::after {
   margin-top: 1.8rem;
 }
 
-.foundation-block {
-  display: grid;
-  grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.28fr);
-  gap: clamp(2rem, 6vw, 6rem);
-  margin-top: clamp(4rem, 8vw, 7rem);
-  padding-top: 2rem;
-  border-top: 1px solid var(--ink);
-}
-
-.foundation-block > div > h3 {
-  max-width: 24rem;
-  margin-top: 0.9rem;
-  font-family: "Newsreader Variable", Newsreader, Georgia, serif;
-  font-size: clamp(2rem, 3.2vw, 3.25rem);
-  font-weight: 450;
-  letter-spacing: -0.04em;
-  line-height: 1;
-}
-
-.foundation-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.foundation-list li {
-  display: grid;
-  grid-template-columns: 2.5rem minmax(0, 1fr) auto;
-  gap: 1rem;
-  align-items: start;
-  padding: 1.35rem 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.foundation-list > li > span,
-.foundation-list code {
-  color: var(--ink-faint);
-  font:
-    600 0.68rem/1.35 "JetBrains Mono Variable",
-    monospace;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.foundation-list h4 {
-  font-family: "Newsreader Variable", Newsreader, Georgia, serif;
-  font-size: 1.35rem;
-  font-weight: 540;
-}
-
-.foundation-list p {
-  max-width: 31rem;
-  margin-top: 0.35rem;
-  color: var(--ink-soft);
-}
-
 .status::before {
   position: absolute;
   top: 0.3rem;
@@ -842,8 +756,7 @@ footer {
 
   .section-heading,
   .ledger-heading,
-  .principles-grid,
-  .foundation-block {
+  .principles-grid {
     grid-template-columns: 1fr;
     gap: 2.2rem;
   }
@@ -860,10 +773,6 @@ footer {
 @media (max-width: 700px) {
   .page-shell {
     width: min(calc(100% - 2rem), var(--page));
-  }
-
-  .announcement-inner span:last-child {
-    display: none;
   }
 
   .header-inner {
@@ -941,14 +850,6 @@ footer {
 
   .product-list {
     grid-template-columns: 1fr;
-  }
-
-  .foundation-list li {
-    grid-template-columns: 2rem minmax(0, 1fr);
-  }
-
-  .foundation-list code {
-    grid-column: 2;
   }
 
   .product-record {
