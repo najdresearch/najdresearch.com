@@ -38,10 +38,12 @@ import SiteLayout from "@/layouts/SiteLayout.astro";
         credentials are stored in the operating system credential store.
       </p>
       <h2>Health telemetry</h2><p>
-        Public preview builds may send health-only events by default: product
-        version, coarse operating-system and hardware class, crash category,
-        latency, and feature success. Users can disable this during onboarding
-        or later in settings.
+        Public preview builds send health-only events by default. Najd Code's
+        fixed event schema contains the event name, product and version,
+        operating system, processor architecture, timestamp, and a random
+        installation identifier that rotates every 30 days. Users can disable
+        this at any time with the <code>Najd › Health Telemetry: Enabled</code>
+        application setting.
       </p><p>
         Health events must not contain prompts, code, model output, repository
         identity, filenames, paths, credentials, or stable hardware identifiers.
