@@ -1,0 +1,71 @@
+---
+import SiteLayout from "@/layouts/SiteLayout.astro";
+---
+
+<SiteLayout
+  title="Privacy — Najd Research"
+  description="Privacy commitments for Najd Research products."
+>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="page-shell header-inner">
+      <a class="wordmark" href="/" aria-label="Najd Research home"
+        ><img
+          class="wordmark-logo"
+          src="/logo.webp"
+          alt=""
+          width="96"
+          height="49"
+        /><span>Najd Research</span></a
+      ><nav aria-label="Primary navigation">
+        <a href="/code">Najd Code <span>01</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="document-shell page-shell">
+    <header class="document-hero">
+      <p class="kicker">POLICY / PRIVACY</p><h1>
+        Private work stays private.
+      </h1><p class="document-lede">
+        Najd products are designed to keep source code, prompts, model outputs,
+        paths, filenames, and credentials out of Najd telemetry.
+      </p>
+    </header>
+    <article class="policy-copy">
+      <h2>Solo products</h2><p>
+        Local inference remains on the device. Cloud providers receive content
+        only when a user explicitly enables and selects that provider. Provider
+        credentials are stored in the operating system credential store.
+      </p>
+      <h2>Health telemetry</h2><p>
+        Public preview builds may send health-only events by default: product
+        version, coarse operating-system and hardware class, crash category,
+        latency, and feature success. Users can disable this during onboarding
+        or later in settings.
+      </p><p>
+        Health events must not contain prompts, code, model output, repository
+        identity, filenames, paths, credentials, or stable hardware identifiers.
+        Network addresses are stripped at ingestion and raw events are retained
+        for no more than 30 days.
+      </p>
+      <h2>Enterprise products</h2><p>
+        The enterprise control plane stores identity, policy, approvals,
+        entitlements, node and repository metadata, and redacted audit events.
+        Prompts, code, outputs, artifacts, and provider credentials remain on
+        execution nodes.
+      </p>
+      <h2>Contact</h2><p>
+        Privacy questions may be sent to <a
+          href="mailto:privacy@najdresearch.com">privacy@najdresearch.com</a
+        >.
+      </p>
+    </article>
+  </main>
+  <footer>
+    <div class="page-shell document-footer">
+      <p>Najd Research · Riyadh, Saudi Arabia</p><div>
+        <a href="/code">Najd Code</a><a href="/security">Security</a>
+      </div>
+    </div>
+  </footer>
+</SiteLayout>

@@ -43,7 +43,7 @@ const year = new Date().getFullYear();
           tools, delegate work, and finish software.
         </p>
         <div class="hero-actions">
-          <a class="primary-action" href="#work">Explore Najd Code</a>
+          <a class="primary-action" href="/code">Explore Najd Code</a>
           <a class="text-action" href="#research">Research index ↓</a>
         </div>
       </div>
@@ -113,7 +113,13 @@ const year = new Date().getFullYear();
                 )}
               </div>
               <div class="record-body">
-                <h3>{product.name}</h3>
+                <h3>
+                  {product.href ? (
+                    <a href={product.href}>{product.name}</a>
+                  ) : (
+                    product.name
+                  )}
+                </h3>
                 <p>{product.description}</p>
               </div>
               <span class="status" data-status={product.status}>
@@ -212,6 +218,9 @@ const year = new Date().getFullYear();
         <p>Independent AI research from Riyadh.</p>
       </div>
       <div class="footer-links">
+        <a href="/code">Najd Code</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/security">Security</a>
         <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
         <a href={SITE.github} target="_blank" rel="noreferrer">GitHub ↗</a>
         <a href={SITE.x} target="_blank" rel="noreferrer">X ↗</a>

@@ -6,6 +6,7 @@ export interface ProductRecord {
   description: string;
   status: WorkStatus;
   label: string;
+  href?: string;
 }
 
 export const products: ProductRecord[] = [
@@ -16,6 +17,7 @@ export const products: ProductRecord[] = [
       "An environment where agents can plan, use tools, delegate work, and finish software.",
     status: "active",
     label: "Active development",
+    href: "/code",
   },
   {
     number: "02",
