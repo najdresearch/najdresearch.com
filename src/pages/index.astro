@@ -1,12 +1,14 @@
 ---
 import SiteLayout from "@/layouts/SiteLayout.astro";
 import { SITE } from "@/config";
-import { products } from "@/data/research";
 
 const year = new Date().getFullYear();
 ---
 
-<SiteLayout>
+<SiteLayout
+  title="Najd Research — Independent research lab in Riyadh"
+  description="Najd Research is an independent lab in Riyadh building open models and systems for the region and beyond."
+>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header">
@@ -22,9 +24,8 @@ const year = new Date().getFullYear();
         <span>Najd Research</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#work">Work <span>01</span></a>
-        <a href="#principles">Principles <span>02</span></a>
-        <a href="#research">Research <span>03</span></a>
+        <a href="#focus">Focus <span>01</span></a>
+        <a href="#join">Join us <span>02</span></a>
         <a href={SITE.github} target="_blank" rel="noreferrer">GitHub ↗</a>
       </nav>
     </div>
@@ -33,19 +34,15 @@ const year = new Date().getFullYear();
   <main id="main-content">
     <section class="hero page-shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="kicker">Independent AI research from Riyadh</p>
+        <p class="kicker">Independent research lab · Riyadh</p>
         <h1 id="hero-title">
-          Intelligence should be <em>open,</em> inspectable, and useful.
+          Built here.<br /><em>Open to the world.</em>
         </h1>
         <p class="hero-intro">
-          Najd Research builds open systems for machine intelligence. We are
-          starting with Najd Code—an environment where agents can plan, use
-          tools, delegate work, and finish software.
+          Najd Research is an independent lab in Riyadh, building open systems
+          and pursuing research that can create lasting impact across the region
+          and beyond.
         </p>
-        <div class="hero-actions">
-          <a class="primary-action" href="/code">Explore Najd Code</a>
-          <a class="text-action" href="#research">Research index ↓</a>
-        </div>
       </div>
 
       <figure class="landscape-figure">
@@ -64,148 +61,51 @@ const year = new Date().getFullYear();
           <span>NAJD / RIYADH</span>
         </figcaption>
       </figure>
-
-      <dl class="hero-meta-grid">
-        <div>
-          <dt>Status</dt>
-          <dd><i aria-hidden="true"></i> Active development</dd>
-        </div>
-        <div>
-          <dt>Focus</dt>
-          <dd>Agent systems</dd>
-        </div>
-        <div>
-          <dt>Base</dt>
-          <dd>Riyadh, SA</dd>
-        </div>
-      </dl>
     </section>
 
     <section
-      class="work-section page-shell"
-      id="work"
-      aria-labelledby="work-title"
+      class="focus-section page-shell"
+      id="focus"
+      aria-labelledby="focus-title"
     >
-      <div class="section-heading">
-        <div>
-          <p class="section-number">01 / CURRENT WORK</p>
-          <h2 id="work-title">
-            One active edge.<br />A connected system next.
-          </h2>
-        </div>
+      <p class="section-number">01 / FOCUS</p>
+      <div class="focus-grid">
+        <h2 id="focus-title">Build what should exist.</h2>
         <p>
-          Najd Code is the active proving ground. Chat, Craft, Search, Models,
-          and Inference follow from the same open foundation as the next systems
-          to build.
+          Models grounded in this region. Systems that can reason, search,
+          create, and act. Research released openly so others can inspect it,
+          challenge it, and build on it.
         </p>
       </div>
-
-      <ol class="product-list" aria-label="Najd product roadmap">
-        {
-          products.map((product, index) => (
-            <li class:list={["product-record", `is-${product.status}`]}>
-              <div class="record-topline">
-                <span class="record-number">{product.number}</span>
-                {index < products.length - 1 && (
-                  <span class="record-arrow" aria-hidden="true">
-                    →
-                  </span>
-                )}
-              </div>
-              <div class="record-body">
-                <h3>
-                  {product.href ? (
-                    <a href={product.href}>{product.name}</a>
-                  ) : (
-                    product.name
-                  )}
-                </h3>
-                <p>{product.description}</p>
-              </div>
-              <span class="status" data-status={product.status}>
-                {product.label}
-              </span>
-            </li>
-          ))
-        }
-      </ol>
     </section>
 
-    <section
-      class="principles-section"
-      id="principles"
-      aria-labelledby="principles-title"
-    >
-      <div class="page-shell principles-grid">
-        <div class="principles-intro">
-          <p class="section-number">02 / PRINCIPLES</p>
-          <h2 id="principles-title">The work should explain the lab.</h2>
+    <section class="join-section" id="join" aria-labelledby="join-title">
+      <div class="page-shell join-grid">
+        <div>
+          <p class="section-number">02 / JOIN US</p>
+          <h2 id="join-title">Build it with us.</h2>
+        </div>
+        <div class="join-copy">
           <p>
-            Najd Research exists to make machine intelligence more open,
-            inspectable, and dependable through systems people can actually use.
+            Najd is at the beginning. We want researchers, engineers, and
+            independent builders who want to shape an institution—not just join
+            one. Send us something you have built, or tell us what you believe
+            should exist.
           </p>
+          <div class="join-actions">
+            <a
+              class="primary-action"
+              href={`mailto:${SITE.email}?subject=Joining%20Najd%20Research`}
+              >Build with us ↗</a
+            >
+            <a
+              class="text-action"
+              href={SITE.github}
+              target="_blank"
+              rel="noreferrer">Follow the work ↗</a
+            >
+          </div>
         </div>
-        <ol class="principles-list">
-          <li>
-            <span>01</span>
-            <div>
-              <h3>Open by default</h3>
-              <p>
-                Publish code, methods, and evidence that make scrutiny possible.
-              </p>
-            </div>
-          </li>
-          <li>
-            <span>02</span>
-            <div>
-              <h3>Systems over demos</h3>
-              <p>
-                Build reliable environments around models, not spectacles around
-                isolated outputs.
-              </p>
-            </div>
-          </li>
-          <li>
-            <span>03</span>
-            <div>
-              <h3>Research through building</h3>
-              <p>
-                Let working software reveal the questions worth answering next.
-              </p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section
-      class="ledger-section page-shell"
-      id="research"
-      aria-labelledby="ledger-title"
-    >
-      <div class="ledger-heading">
-        <div>
-          <p class="section-number">03 / RESEARCH INDEX</p>
-          <h2 id="ledger-title">Evidence, when it is ready.</h2>
-        </div>
-        <p>
-          Releases, notes, models, and experiments will appear here when there
-          is something concrete to inspect.
-        </p>
-      </div>
-      <div class="empty-ledger">
-        <div>
-          <span class="empty-ledger-number">000</span>
-          <p>Index status</p>
-        </div>
-        <div>
-          <h3>No public releases yet.</h3>
-          <p>
-            Najd Code is in active development. We will publish the record with
-            the work.
-          </p>
-        </div>
-        <span class="status" data-status="foundation">Forthcoming</span>
       </div>
     </section>
   </main>
@@ -215,10 +115,8 @@ const year = new Date().getFullYear();
       <img class="footer-logo" src="/logo.webp" alt="" width="96" height="49" />
       <div class="footer-identity">
         <p class="footer-name">Najd Research</p>
-        <p>Independent AI research from Riyadh.</p>
       </div>
       <div class="footer-links">
-        <a href="/code">Najd Code</a>
         <a href="/privacy">Privacy</a>
         <a href="/security">Security</a>
         <a href={`mailto:${SITE.email}`}>{SITE.email}</a>

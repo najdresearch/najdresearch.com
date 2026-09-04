@@ -1,10 +1,11 @@
 ---
 import SiteLayout from "@/layouts/SiteLayout.astro";
+import { SITE } from "@/config";
 ---
 
 <SiteLayout
   title="Security — Najd Research"
-  description="Security reporting and product security commitments for Najd Research."
+  description="Security reporting and responsible disclosure for Najd Research."
 >
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
@@ -18,7 +19,7 @@ import SiteLayout from "@/layouts/SiteLayout.astro";
           height="49"
         /><span>Najd Research</span></a
       ><nav aria-label="Primary navigation">
-        <a href="/code">Najd Code <span>01</span></a>
+        <a href="/">Home</a>
       </nav>
     </div>
   </header>
@@ -33,34 +34,28 @@ import SiteLayout from "@/layouts/SiteLayout.astro";
     </header>
     <article class="policy-copy">
       <h2>Reporting</h2><p>
-        Send a clear description, affected version, reproduction steps, and
-        impact to <a href="mailto:security@najdresearch.com"
-          >security@najdresearch.com</a
+        Send a clear description, affected page or repository, reproduction
+        steps, and potential impact to <a
+          href={`mailto:${SITE.email}?subject=Security%20report`}
+          >{SITE.email}</a
         >. Do not include credentials or unrelated personal data.
       </p>
-      <h2>Release boundary</h2><p>
-        Najd Code releases require pinned source revisions, checksum-verified
-        runtimes, dependency and license evidence, native UI acceptance, signed
-        artifacts, notarization, and a release soak against the exact published
-        bytes.
-      </p>
-      <h2>Product boundary</h2><p>
-        Local services bind to loopback interfaces and authenticate requests.
-        Remote execution uses registered repositories and mutually authenticated
-        nodes. Enterprise policy and audit features are separately licensed and
-        self-hosted.
-      </p>
       <h2>Safe harbor</h2><p>
-        Good-faith research that avoids privacy violations, service disruption,
-        and access beyond what is necessary to demonstrate the issue will not be
-        pursued by Najd Research.
+        Najd Research will not pursue action against good-faith research that
+        avoids privacy violations, service disruption, data destruction, and
+        access beyond what is necessary to demonstrate an issue.
+      </p>
+      <h2>Coordination</h2><p>
+        Please allow reasonable time to investigate and address a report before
+        public disclosure. We will acknowledge useful reports and coordinate in
+        good faith.
       </p>
     </article>
   </main>
   <footer>
     <div class="page-shell document-footer">
       <p>Najd Research · Riyadh, Saudi Arabia</p><div>
-        <a href="/code">Najd Code</a><a href="/privacy">Privacy</a>
+        <a href="/">Home</a><a href="/privacy">Privacy</a>
       </div>
     </div>
   </footer>

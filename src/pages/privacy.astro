@@ -1,10 +1,11 @@
 ---
 import SiteLayout from "@/layouts/SiteLayout.astro";
+import { SITE } from "@/config";
 ---
 
 <SiteLayout
   title="Privacy — Najd Research"
-  description="Privacy commitments for Najd Research products."
+  description="Privacy information for the Najd Research website and correspondence."
 >
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
@@ -18,47 +19,38 @@ import SiteLayout from "@/layouts/SiteLayout.astro";
           height="49"
         /><span>Najd Research</span></a
       ><nav aria-label="Primary navigation">
-        <a href="/code">Najd Code <span>01</span></a>
+        <a href="/">Home</a>
       </nav>
     </div>
   </header>
   <main id="main-content" class="document-shell page-shell">
     <header class="document-hero">
-      <p class="kicker">POLICY / PRIVACY</p><h1>
-        Private work stays private.
-      </h1><p class="document-lede">
-        Najd products are designed to keep source code, prompts, model outputs,
-        paths, filenames, and credentials out of Najd telemetry.
+      <p class="kicker">POLICY / PRIVACY</p><h1>Privacy, kept simple.</h1><p
+        class="document-lede"
+      >
+        This is a public research website. It has no user accounts and does not
+        accept prompts, source code, or other product data.
       </p>
     </header>
     <article class="policy-copy">
-      <h2>Solo products</h2><p>
-        Local inference remains on the device. Cloud providers receive content
-        only when a user explicitly enables and selects that provider. Provider
-        credentials are stored in the operating system credential store.
+      <h2>Website data</h2><p>
+        Najd Research does not use advertising trackers on this site. The
+        infrastructure that serves the website may process standard request
+        information, such as network address, browser type, requested page, and
+        time of access, as needed to operate and protect the service.
       </p>
-      <h2>Health telemetry</h2><p>
-        Public preview builds send health-only events by default. Najd Code's
-        fixed event schema contains the event name, product and version,
-        operating system, processor architecture, timestamp, and a random
-        installation identifier that rotates every 30 days. Users can disable
-        this at any time with the <code>Najd › Health Telemetry: Enabled</code>
-        application setting.
-      </p><p>
-        Health events must not contain prompts, code, model output, repository
-        identity, filenames, paths, credentials, or stable hardware identifiers.
-        Network addresses are stripped at ingestion and raw events are retained
-        for no more than 30 days.
+      <h2>Correspondence</h2><p>
+        If you contact Najd Research by email, we receive the address and
+        information you choose to send. We use it to read and respond to your
+        message and to continue a conversation you requested.
       </p>
-      <h2>Enterprise products</h2><p>
-        The enterprise control plane stores identity, policy, approvals,
-        entitlements, node and repository metadata, and redacted audit events.
-        Prompts, code, outputs, artifacts, and provider credentials remain on
-        execution nodes.
+      <h2>External links</h2><p>
+        Links to GitHub, X, Hugging Face, and other external services are
+        governed by those services' own privacy practices.
       </p>
       <h2>Contact</h2><p>
-        Privacy questions may be sent to <a
-          href="mailto:privacy@najdresearch.com">privacy@najdresearch.com</a
+        Privacy questions may be sent to <a href={`mailto:${SITE.email}`}
+          >{SITE.email}</a
         >.
       </p>
     </article>
@@ -66,7 +58,7 @@ import SiteLayout from "@/layouts/SiteLayout.astro";
   <footer>
     <div class="page-shell document-footer">
       <p>Najd Research · Riyadh, Saudi Arabia</p><div>
-        <a href="/code">Najd Code</a><a href="/security">Security</a>
+        <a href="/">Home</a><a href="/security">Security</a>
       </div>
     </div>
   </footer>

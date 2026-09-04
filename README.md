@@ -1,7 +1,7 @@
 # Najd Research
 
-The public research index for [Najd Research](https://najdresearch.com), an
-independent AI research lab in Riyadh.
+The public website for [Najd Research](https://najdresearch.com), an independent
+research lab in Riyadh building open systems and working in public.
 
 ## Development
 
@@ -15,5 +15,4 @@ Run `pnpm build` for the production build. The static output is written to
 
 ## License
 
-MIT. The site's technical foundation is adapted from
-[ma7.dev](https://github.com/ma7dev/ma7.dev).
+MIT.

@@ -1,7 +1,7 @@
 export const SITE = {
   title: "Najd Research",
   description:
-    "Independent AI research from Riyadh, building open and inspectable systems for machine intelligence.",
+    "An independent research lab in Riyadh building open systems and publishing work others can inspect, challenge, and extend.",
   website: "https://najdresearch.com",
   email: "salam@najdresearch.com",
   github: "https://github.com/najdresearch",
