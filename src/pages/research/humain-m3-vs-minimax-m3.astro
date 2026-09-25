@@ -1,0 +1,283 @@
+---
+import SiteLayout from "@/layouts/SiteLayout.astro";
+
+const models = [
+  { name: "HUMAIN M3", acceptable: "56,202", total: "85,246", score: "65.93%" },
+  {
+    name: "MiniMax M3",
+    acceptable: "54,969",
+    total: "85,246",
+    score: "64.48%",
+  },
+];
+---
+
+<SiteLayout
+  title="HUMAIN M3 vs MiniMax M3 — Historical Najd Study"
+  description="A historical pre-audit Najd Research comparison across 6,089 case IDs, 28 configurations, and 170,492 graded outputs."
+>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="page-shell header-inner">
+      <a class="wordmark" href="/" aria-label="Najd Research home">
+        <img
+          class="wordmark-logo"
+          src="/logo.webp"
+          alt=""
+          width="96"
+          height="49"
+        />
+        <span>Najd Research</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Home</a><a href="/research/humain-m3-vs-minimax-m3/"
+          >Research</a
+        >
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="page-shell report">
+    <div class="report-kicker">Historical research / 2026.09</div>
+    <h1>HUMAIN M3<br /><em>vs MiniMax M3.</em></h1>
+    <p class="report-lead">
+      A preserved Najd Research experiment compared the models across 6,089 case
+      IDs and 14 configurations per model. The verified snapshot holds 170,492
+      grades.
+    </p>
+
+    <section class="scores" aria-label="Full-denominator scores">
+      {
+        models.map(model => (
+          <article class="model-card">
+            <>
+              <h2>{model.name}</h2>
+              <strong>{model.score}</strong>
+            </>
+            <p>
+              {model.acceptable} acceptable / {model.total} total outputs
+            </p>
+          </article>
+        ))
+      }
+    </section>
+
+    <aside class="disclosure">
+      <strong>Historical pre-audit result.</strong> This run covers all 6,089 case
+      IDs in the current Hugging Face release, including its 372 quarantined cases,
+      but some case contents changed before publication. Historical evidence differs
+      on 1,419 prompts and 1,422 expected answers. These figures are not an exact
+      run of the current release or a certified Arena leaderboard ranking.
+    </aside>
+
+    <section class="report-section">
+      <span class="section-number">01 / METHOD</span><h2>
+        What the score means
+      </h2>
+      <p>
+        “Correct” and “possible correct” count as acceptable. Every other
+        outcome, including a technical failure, counts as zero. All 6,089 case
+        IDs remain in the denominator for every configuration. The snapshot
+        contains 170,367 usable grades and 125 technical failures. HUMAIN M3
+        leads by 1.45 percentage points under this historical protocol.
+      </p>
+      <div class="facts">
+        <div><strong>6,089</strong><span>case IDs</span></div><div>
+          <strong>28</strong><span>configurations</span>
+        </div><div><strong>170,492</strong><span>graded outputs</span></div><div
+        >
+          <strong>372</strong><span>quarantined case IDs</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="report-section">
+      <span class="section-number">02 / EVIDENCE</span><h2>What was checked</h2>
+      <p>
+        The archive’s grade and evidence files matched their SHA-256 manifest.
+        The import checked every case ID against the pinned Hugging Face release
+        and found a complete 6,089-case set in each of 28 configurations. Only
+        grades and audit metadata were imported into Arena. Raw model answers
+        remain private.
+      </p>
+      <p>
+        An <a
+          href="https://drive.google.com/file/d/1sxxj3zvP82EGQzcmmki_dSLruzEsQVG8/view"
+          >earlier PDF report</a
+        > used an older snapshot and has different figures. The current result above
+        comes from the later verified snapshot. The PDF may require Drive access.
+      </p>
+      <div class="links">
+        <a
+          href="https://huggingface.co/datasets/najdresearch/najd-benchmark/tree/cb30c1c9e46c62f691380c3269885cdb8f22f52b"
+          >Pinned dataset ↗</a
+        ><a href="/research/historical-m3-results.md">Markdown report ↗</a>
+      </div>
+    </section>
+
+    <section class="report-section">
+      <span class="section-number">03 / NEXT TEST</span><h2>
+        Exact-release comparison
+      </h2>
+      <p>
+        A fresh run must use the published case contents. The 372 quarantined
+        cases need suitable fixtures, repairs, or a stated handling rule before
+        a new 6,089-case result can be called canonical.
+      </p>
+    </section>
+  </main>
+  <footer>
+    <div class="page-shell report-footer">
+      <a href="/">Najd Research</a><span>Historical study · September 2026</span
+      >
+    </div>
+  </footer>
+</SiteLayout>
+
+<style>
+  .report {
+    padding-block: clamp(3rem, 6vw, 6rem) 7rem;
+  }
+  .report-kicker,
+  .section-number {
+    color: var(--green);
+    font:
+      650 0.72rem/1.4 "JetBrains Mono Variable",
+      monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  h1 {
+    margin-top: 1rem;
+    font:
+      500 clamp(3.4rem, 8vw, 8rem)/0.95 "Newsreader Variable",
+      serif;
+    letter-spacing: -0.055em;
+  }
+  h1 em {
+    color: var(--green);
+    font-weight: 400;
+  }
+  .report-lead {
+    max-width: 49rem;
+    margin-top: 2rem;
+    color: var(--ink-soft);
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    line-height: 1.55;
+  }
+  .scores {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  .model-card {
+    padding: clamp(1.3rem, 3vw, 2.2rem);
+    border: 1px solid var(--rule);
+    background: #ffffffa8;
+  }
+  .model-card h2 {
+    font:
+      650 0.72rem/1.4 "JetBrains Mono Variable",
+      monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .model-card strong {
+    display: block;
+    margin-block: 1.4rem 0.5rem;
+    color: var(--green);
+    font:
+      500 clamp(3.7rem, 7vw, 6.2rem)/1 "Newsreader Variable",
+      serif;
+  }
+  .model-card p {
+    color: var(--ink-faint);
+    font:
+      0.77rem/1.5 "JetBrains Mono Variable",
+      monospace;
+  }
+  .disclosure {
+    max-width: 70rem;
+    margin-top: 1.4rem;
+    padding: 1.4rem 1.6rem;
+    border-left: 4px solid var(--green);
+    background: #006c3512;
+    line-height: 1.7;
+  }
+  .report-section {
+    max-width: 75rem;
+    margin-top: 5rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .report-section h2 {
+    margin-block: 0.9rem 1.3rem;
+    font:
+      500 clamp(2.3rem, 5vw, 4rem)/1 "Newsreader Variable",
+      serif;
+    letter-spacing: -0.035em;
+  }
+  .report-section p {
+    max-width: 54rem;
+    margin-block: 1rem;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+  .report-section a {
+    color: var(--green);
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .facts div {
+    display: grid;
+    gap: 0.2rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--ink);
+  }
+  .facts strong {
+    font:
+      500 clamp(1.7rem, 3vw, 2.5rem)/1 "Newsreader Variable",
+      serif;
+  }
+  .facts span {
+    color: var(--ink-faint);
+    font:
+      0.7rem/1.5 "JetBrains Mono Variable",
+      monospace;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    font:
+      650 0.76rem/1.4 "JetBrains Mono Variable",
+      monospace;
+    text-transform: uppercase;
+  }
+  .report-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 2rem;
+    font:
+      0.75rem/1.5 "JetBrains Mono Variable",
+      monospace;
+  }
+  .report-footer a {
+    text-decoration: none;
+  }
+  @media (max-width: 700px) {
+    .scores {
+      grid-template-columns: 1fr;
+    }
+    .facts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
