@@ -1006,3 +1006,52 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Simple project overview, following the homepage's editorial layout. */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding-block: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.project-list h3 {
+  font-family: "Newsreader Variable", Newsreader, Georgia, serif;
+  font-size: 2rem;
+  font-weight: 450;
+  margin-bottom: 1rem;
+}
+.project-list p {
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1.25rem;
+}
+.project-links a,
+.dataset-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  padding-block: 0.5rem;
+}
+.dataset-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1.5rem;
+  color: var(--ink-soft);
+}
+@media (max-width: 760px) {
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .project-list article + article {
+    border-top: 1px solid var(--rule);
+    padding-top: 2rem;
+  }
+}
